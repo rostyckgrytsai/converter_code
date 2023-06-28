@@ -1,0 +1,8 @@
+<div class="converter_item_body">
+    <select #cur (change)="setCurrency(cur.value)" >
+        <!--<option *ngFor="let option of names" [value]="option">{{ option }}</option>-->
+        <option *ngFor="let option of names" [value]="option" [selected]="option === currency">{{ option }}</option>
+      </select>
+      <input type="text" (input)="setAmount($event)" [value]="converter_data.amount">
+</div>
+  

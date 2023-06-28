@@ -1,0 +1,18 @@
+.converter_item_body{
+    display: flex;
+}
+
+.converter_item_body input{
+    width: 220px;
+    height: 100px;
+    font-size: 45px;
+    line-height: 90px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-left: 15px;
+}
+
+select{
+    font-size: 35px;
+    cursor: pointer;
+}
