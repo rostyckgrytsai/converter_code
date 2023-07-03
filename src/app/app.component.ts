@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
+import {getCurrencyService} from '../service/get_currency'
 
 @Component({
   selector: 'app-root',
@@ -45,25 +46,26 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.getCurrency()
+    getCurrencyService().then(data=>{this.data=data;console.log(data)})
+    //this.getCurrency()
   }
 
   countCurrency(amount:number, from:string, to:string):number{
     const toRate = this.data.rates[from]
     const fromRate = this.data.rates[to]
-    //console.log(`from: ${from} (rate: ${fromRate}) to: ${to} (rate: ${toRate}) amount: ${amount}`)
     const fromInDollars = fromRate * amount
     const result = fromInDollars / toRate
     return parseFloat(result.toFixed(2))
   }
 
+  /*
   getCurrency(){
     //console.log('Getting Currency')
     this.http.get('https://api.exchangerate-api.com/v4/latest/USD').subscribe((response)=>{
       this.data = response
-      //console.log(this.data.rates)
+      //console.log(this.data)
     }, (err)=>{console.log(err)})
-  }
+  }*/
 
 
 }

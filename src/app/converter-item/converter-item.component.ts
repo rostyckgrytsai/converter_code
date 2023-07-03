@@ -38,13 +38,11 @@ export class ConverterItemComponent implements OnInit{
   changeConverterDataAmount(amount:number){
     this.converter_data.amount = amount
     this.changeConverterDataEvent.emit(this.converter_data)
-    console.log('cahange '+this.result)
   }
 
   changeConverterDataCurrency(currency:string){
     this.converter_data.currency = currency
     this.changeConverterDataEvent.emit(this.converter_data)
-    console.log('cahange '+this.result)
   }
 
 
